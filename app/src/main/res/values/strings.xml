@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pokedex</string>
+    <string name="login_subtitle">Inicio de sesion</string>
+    <string name="sign_in_with_facebook">Iniciar sesión con Facebook</string>
+    <string name="facebook_app_id">e2348e5258129df4a66e72ca06d76437</string>
+    <string name="facebook_application_id" translatable="false">742319240915297</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">742319240915297</string>
+    <string name="google_sign_in_button">Google Sign In Button</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+</resources>
