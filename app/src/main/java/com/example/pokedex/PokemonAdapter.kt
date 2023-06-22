@@ -33,7 +33,6 @@ class PokemonAdapter : ListAdapter<PokeApiService.Pokemon, PokemonAdapter.Pokemo
         val pokemon = getItem(position)
         val apiService = PokeApiService.create()
 
-        // Realizar una llamada adicional para obtener los detalles completos del Pokémon
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val fullPokemon = apiService.getPokemonByName(pokemon.name)

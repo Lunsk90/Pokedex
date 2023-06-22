@@ -228,10 +228,6 @@ class Principal : AppCompatActivity() {
     }
 
     private fun addToTeam(pokemon: PokeApiService.Pokemon) {
-        // Agrega el código necesario para guardar el Pokémon en el equipo
-        // y mostrarlo en la actividad de equipo (TeamActivity)
-
-        // Por ejemplo, puedes guardar el Pokémon en SharedPreferences
         val sharedPreferences = getSharedPreferences("Team", Context.MODE_PRIVATE)
         val teamString = sharedPreferences.getString("team", "")
         val teamList = teamString?.split(",")?.toMutableList() ?: mutableListOf()
@@ -244,7 +240,6 @@ class Principal : AppCompatActivity() {
             Toast.makeText(this, "El Pokémon ya está en el equipo", Toast.LENGTH_SHORT).show()
         }
 
-        // Luego, puedes iniciar la actividad TeamActivity para mostrar el equipo actualizado
         val intent = Intent(this, TeamActivity::class.java)
         startActivity(intent)
     }

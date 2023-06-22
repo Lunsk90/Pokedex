@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -84,9 +83,7 @@ class TeamActivity : AppCompatActivity() {
             }
             pokemon
         } catch (e: Exception) {
-            // Manejar el error de la llamada a la API
             e.printStackTrace()
-            // Retorna un Pokémon vacío en caso de error
             PokeApiService.Pokemon(id, "Unknown", emptyList(), PokeApiService.Sprites(""))
         }
     }

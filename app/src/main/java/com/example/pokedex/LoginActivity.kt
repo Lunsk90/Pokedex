@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        FacebookSdk.setClientToken("@string/facebook_app_id") // Reemplaza con tu token de cliente de Facebook
+        FacebookSdk.setClientToken("@string/facebook_app_id")
 
         FacebookSdk.sdkInitialize(applicationContext)
         callbackManager = CallbackManager.Factory.create()
@@ -61,7 +61,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btnLogin.setOnClickListener {
-            // Aquí puedes implementar el código para el inicio de sesión con Google
             val providers = arrayListOf(
                 AuthUI.IdpConfig.GoogleBuilder().build()
             )
@@ -75,15 +74,10 @@ class LoginActivity : AppCompatActivity() {
 
         btnLoginFacebook.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
-                // Inicio de sesión exitoso con Facebook
-                // Puedes acceder al token de acceso con: loginResult.accessToken
-                // Aquí puedes implementar la lógica para iniciar sesión en Firebase usando el token de acceso de Facebook
                 Toast.makeText(this@LoginActivity, "Inicio de sesión con Facebook exitoso", Toast.LENGTH_SHORT).show()
-                // ...
             }
 
             override fun onCancel() {
-                // El usuario canceló el inicio de sesión con Facebook
                 Toast.makeText(this@LoginActivity, "Inicio de sesión con Facebook cancelado", Toast.LENGTH_SHORT).show()
             }
 
@@ -107,12 +101,7 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Bienvenid@ ${user?.email}", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, Principal::class.java))
             finish()
-            // ...
         } else {
-            // Sign in failed. If response is null the user canceled the
-            // sign-in flow using the back button. Otherwise check
-            // response.getError().getErrorCode() and handle the error.
-            // ...
             Toast.makeText(this, "Ocurrió un error al iniciar sesión", Toast.LENGTH_SHORT).show()
         }
     }
